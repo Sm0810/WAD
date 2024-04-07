@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn3").click(function(){
+                const var1 = localStorage.getItem("formJSON");
+                const myobj = JSON.parse(var1);
+                $("#name1").val(myobj.name);
+                $("#city1").val(myobj.city);
+                $("#cont1").val(myobj.cont);
+            })
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <tr><button id="btn3">display</button></tr>
+        <tr>
+        <td>Name:</td>
+        <td><input type="text" id="name1"></input></td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td><input type="text" id="city1"></input></td>
+        </tr>
+        <tr>
+            <td>contact:</td>
+            <td><input type="text" id="cont1"></input></td>
+        </tr>
+    </table>
+</body>
+</html>

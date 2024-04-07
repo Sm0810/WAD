@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#submitbutton").click(function(){
+                data={
+                    name:$("#name").val(),
+                    city:$("#city").val(),
+                    cont:$("#cont").val()
+                }
+                const obj = JSON.stringify(data);
+                localStorage.setItem("formJSON",obj);
+                $("#div1").load("http://127.0.0.1:5500/page2.html");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="div1">
+   
+        <label>Name</label>
+        <input type="text" id="name"></input><br>
+        <label>City</label>
+        <input type="text" id="city"></input><br>
+        <label>Contact</label>
+        <input type="text" id="cont"></input><br>
+        <input type="submit" id="submitbutton"></input>
+   
+</div>
+</body>
+
+</html>
